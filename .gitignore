@@ -11,6 +11,9 @@
 *~
 *.sass-cache
 
+# Inspiritas temp-stuff
+inspiritas-theme.css
+
 # OS or Editor folders
 .DS_Store
 ._*
