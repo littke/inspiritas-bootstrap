@@ -13,6 +13,7 @@
 
 # Inspiritas temp-stuff
 inspiritas-theme.css
+variables.css
 
 # OS or Editor folders
 .DS_Store
