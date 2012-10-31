@@ -17,6 +17,10 @@
 @grayLighter:           #eee;
 @white:                 #fff;
 
+// Inspiritas colors
+// -------------------------
+@lightBlue:             #edf0f2;
+
 
 // Accent colors
 // -------------------------
@@ -25,14 +29,20 @@
 @green:                 #46a546;
 @red:                   #9d261d;
 @yellow:                #ffc40d;
-@orange:                #f89406;
 @pink:                  #c3325f;
 @purple:                #7a43b6;
+
+// Inspiritas colors
+// -------------------------
+@orange:                #f9601c; // inspiritas
+@orangeLighter:         #f8844b;
+@orangeDarker:          #cb501a;
+@orangeDark:            #a0491f;
 
 
 // Scaffolding
 // -------------------------
-@bodyBackground:        @white;
+@bodyBackground:        @lightBlue;
 @textColor:             @grayDark;
 
 
@@ -44,27 +54,27 @@
 
 // Typography
 // -------------------------
-@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@sansFontFamily:        "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       "Museo Slab", Georgia, "Times New Roman", Times, serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
-@baseFontSize:          14px;
+@baseFontSize:          13px;
 @baseFontFamily:        @sansFontFamily;
 @baseLineHeight:        20px;
 @altFontFamily:         @serifFontFamily;
 
-@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontFamily:    @serifFontFamily; // empty to use BS default, @baseFontFamily
 @headingsFontWeight:    bold;    // instead of browser default, bold
-@headingsColor:         inherit; // empty to use BS default, @textColor
+@headingsColor:         #141414; // empty to use BS default, @textColor
 
 
 // Component sizing
 // -------------------------
 // Based on 14px font-size and 20px line-height
 
-@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
-@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
-@fontSizeMini:          @baseFontSize * 0.75; // ~11px
+@fontSizeLarge:         @baseFontSize * 1.25;
+@fontSizeSmall:         @baseFontSize * 0.85;
+@fontSizeMini:          11px;
 
 @paddingLarge:          11px 19px; // 44px
 @paddingSmall:          2px 10px;  // 26px
@@ -85,11 +95,11 @@
 // Buttons
 // -------------------------
 @btnBackground:                     @white;
-@btnBackgroundHighlight:            darken(@white, 10%);
-@btnBorder:                         #bbb;
+@btnBackgroundHighlight:            #e3ebef;
+@btnBorder:                         #b6bdc2;
 
-@btnPrimaryBackground:              @linkColor;
-@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);
+@btnPrimaryBackground:              @orangeLighter;
+@btnPrimaryBackgroundHighlight:     @orangeDarker;
 
 @btnInfoBackground:                 #5bc0de;
 @btnInfoBackgroundHighlight:        #2f96b4;
