@@ -39,12 +39,11 @@
 @orangeDarker:          #cb501a;
 @orangeDark:            #a0491f;
 
-
 // Scaffolding
 // -------------------------
 @bodyBackground:        @blueLighter;
 @textColor:             @grayDark;
-
+@sidebarBackground:     #353c3e;
 
 // Links
 // -------------------------
@@ -56,6 +55,7 @@
 // -------------------------
 @sansFontFamily:        "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @serifFontFamily:       "Museo Slab", Georgia, "Times New Roman", Times, serif;
+@brandFontFamily:       "League Gothic", "Museo Slab", "Helvetica Neue", Helvetica, arial, sans-serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
 @baseFontSize:          13px;
@@ -67,6 +67,8 @@
 @headingsFontWeight:    bold;    // instead of browser default, bold
 @headingsColor:         #141414; // empty to use BS default, @textColor
 
+@pageHeaderBackground:          #E3EBEE;
+@pageHeaderBackgroundHighlight: #C2C9CD;
 
 // Component sizing
 // -------------------------
@@ -77,6 +79,7 @@
 @fontSizeMini:          11px;
 
 @paddingLarge:          11px 19px; // 44px
+@paddingMedium:         5px 12px 6px;  // 31px
 @paddingSmall:          2px 10px;  // 26px
 @paddingMini:           1px 6px;   // 24px
 
@@ -161,8 +164,8 @@
 
 // Sprite icons path
 // -------------------------
-@iconSpritePath:          "../img/glyphicons-halflings.png";
-@iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png";
+@iconSpritePath:          "/bootstrap/img/glyphicons-halflings.png";
+@iconWhiteSpritePath:     "/bootstrap/img/glyphicons-halflings-white.png";
 
 
 // Input placeholder text color
@@ -190,7 +193,7 @@
 @navbarCollapseWidth:             979px;
 @navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
 
-@navbarHeight:                    40px;
+@navbarHeight:                    63px;
 @navbarBackgroundHighlight:       #ffffff;
 @navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
 @navbarBorder:                    darken(@navbarBackground, 12%);
@@ -205,12 +208,12 @@
 @navbarBrandColor:                @navbarLinkColor;
 
 // Inverted navbar
-@navbarInverseBackground:                #111111;
-@navbarInverseBackgroundHighlight:       #222222;
+@navbarInverseBackground:                #292e30;
+@navbarInverseBackgroundHighlight:       #434b4f;
 @navbarInverseBorder:                    #252525;
 
 @navbarInverseText:                      @grayLight;
-@navbarInverseLinkColor:                 @grayLight;
+@navbarInverseLinkColor:                 @white;
 @navbarInverseLinkColorHover:            @white;
 @navbarInverseLinkColorActive:           @navbarInverseLinkColorHover;
 @navbarInverseLinkBackgroundHover:       transparent;
@@ -221,7 +224,8 @@
 @navbarInverseSearchBorder:              @navbarInverseBackground;
 @navbarInverseSearchPlaceholderColor:    #ccc;
 
-@navbarInverseBrandColor:                @navbarInverseLinkColor;
+@navbarInverseBrandColor:                @white; // doesnt work bootstrap 2.2.1
+@navbarInverseBrandFontSize:             37px; // added by inspiritas
 
 
 // Pagination
