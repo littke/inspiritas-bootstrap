@@ -210,6 +210,21 @@ section > .row {
 
     text-shadow: 0 1px 1px @white;
 
+    /*
+     * Allow a <div class="pull-right"> in a page-header, 
+     * where buttons can be placed.
+     */
+    .pull-right {
+        line-height: 46px;
+        margin-right: 10px;
+    }
+
+    .btn {
+        // Darken borders on buttons in page headers
+        border-color: rgba(0,0,0,.25) rgba(0,0,0,.25) rgba(0,0,0,.30);
+    }
+
+
     h1, h2 {
         // Decrease header size somewhat
         font-size: @fontSizeHuge;
