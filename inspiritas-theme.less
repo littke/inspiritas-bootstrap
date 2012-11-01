@@ -161,12 +161,21 @@ aside {
     background-color: @white;
     margin-left: 0;
 
+    .kpi {
+        font-size: @fontSizeHuge;
+        font-family: @serifFontFamily;
+    }
+
+    small {
+        color: @gray777;
+    }
+
     // Add border-radius in upper-right and lower-right corners
     .border-radius(0 @baseBorderRadius @baseBorderRadius 0);
 }
 
 section > .row {
-    padding-left: @gridGutterWidth; // TODO: responsive
+    //padding-left: @gridGutterWidth; // TODO: responsive
 }
 
 /* 
@@ -180,7 +189,7 @@ section > .row {
     padding-bottom: 0;
 
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
 
     .gradientBar(@pageHeaderBackground, @pageHeaderBackgroundHighlight);
     .border-radius(0 @baseBorderRadius 0 0);
@@ -189,7 +198,7 @@ section > .row {
 
     h1, h2 {
         // Decrease header size somewhat
-        font-size: @baseFontSize * 1.8;
+        font-size: @fontSizeHuge;
         // Repeat to override
         text-shadow: 0 1px 1px @white;
         margin: 5px 0;
@@ -203,7 +212,8 @@ section > .row {
     text-shadow: 0px 1px 0px rgba(255,255,255, 0.75);
     border-top: 1px solid #CFD6DB;
     border-bottom: 1px solid rgba(0,0,0, 0.3);
-    margin-bottom: 7px;
+    margin-top: 13px;
+    margin-bottom: 15px;
 
     h2, h3 {
         font-size: @fontSizeSmall;
@@ -230,6 +240,7 @@ section > .row {
         .box-shadow(0 0 5px #b6d4e8); 
     }
 }
+
 
 .btn-primary {
     text-shadow: 0 1px 2px @orangeDark !important;
