@@ -123,8 +123,8 @@ aside {
         border-top: 1px solid #1c1f20; 
 
         ul li {
-            padding: @paddingMedium;
             font-size: @fontSizeLarge;
+            // TODO: variables?
             background: #20282B;
             // TODO? IE?
             border-top: 1px solid rgba(255,255,255, 0.05);
@@ -138,18 +138,32 @@ aside {
             }
 
             &.selected {
-                .gradientBar(#ff764e, #d64926);
+                .gradientBar(#ff764e, #d64926); // TODO: variables?
                 border-top: 1px solid #d27349; 
                 border-bottom: 1px solid rgba(0,0,0,0.9);
+
+                a:hover {
+                    // When hovering the selected item, don't make it 
+                    // darker, instead do nothing
+                    background-color: transparent !important;
+                }
             }
 
             a {
                 // Make the <a> elements take full width by using 
                 // display: block, increasing the click area.
                 font-family: @serifFontFamily;
+                padding: @paddingMedium;
                 display: block; 
                 color: @white;
                 text-shadow: 0 1px 1px rgba(0,0,0,0.75);
+
+                // Make the background of the button darker when hovering
+                &:hover {
+                    background-color: @blueBlacker !important;
+                    // Keep the white color (override)
+                    color: @white;
+                }
             }
         }
     }
