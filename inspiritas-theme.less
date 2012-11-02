@@ -92,16 +92,6 @@ body {
     background: url('images/bg.png') repeat @bodyBackground;
 }
 
-body > .container {
-    // Color the whole container like the sidebar to fix faux columns
-    background-color: @sidebarBackground;
-    .border-radius(@baseBorderRadius);
-
-    // Make some space, eh.
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
 .navbar-static-top {
     .brand {
         font-family: @brandFontFamily;
@@ -112,11 +102,25 @@ body > .container {
     }
 }
 
-// Sidebar
-aside {
-    // Add border-radius in upper-left and lower-left corners
-    .border-radius(@baseBorderRadius 0 0 @baseBorderRadius);
-    border-right: 1px solid #2d3134;
+/*
+ * Sidebar
+ *
+ * The sidebar is floated to the left. It's width is defined by @sidebarColumns (1-12).
+ *
+ * The .container holds the sidebar's background and the sidebar is transparent, to allow
+ * the sidebar to appear to span the whole height of the .container.
+ *
+ * We add a margin-left to #content to avoid overlapping the floating sidebar.
+ *
+ */
+// TODO: adjust this for responsiveness?
+@sidebarWidth: (@gridColumnWidth * @sidebarColumns) + (@gridGutterWidth * (@sidebarColumns - 1));
+.container > aside {
+    float: left;
+    width: @sidebarWidth;
+
+    // Add border-radius in upper-left corner.
+    .border-radius(@baseBorderRadius 0 0 0);
 
     nav { 
         margin-top: 40px;
@@ -168,12 +172,29 @@ aside {
         }
     }
 
+}
+
+body > .container {
+    // Color the whole container like the sidebar to fix faux columns
     background: url('images/sidebar_bg.png') repeat @sidebarBackground;
+
+    /*
+     * Pixel tweak:
+     * Increase border-radius in the top right corner to avoid the .container's 
+     * background color shining through in between the .container and the #content.
+     */
+    .border-radius(@baseBorderRadius (@baseBorderRadius + 3) @baseBorderRadius @baseBorderRadius);
+
+    // Make some space, eh.
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 #content {
+    // Don't overlap the floating sidebar
+    margin-left: @sidebarWidth;
+    border-left: 1px solid #2d3134;
     background-color: @white;
-    margin-left: 0;
 
     .kpi {
         font-size: @fontSizeHuge;
@@ -186,72 +207,76 @@ aside {
 
     // Add border-radius in upper-right and lower-right corners
     .border-radius(0 @baseBorderRadius @baseBorderRadius 0);
-}
+    border-top: 1px solid #b8c1c7;
+    border-right: 1px solid #b8c1c7;
 
-section > .row {
-    //padding-left: @gridGutterWidth; // TODO: responsive
-}
+    header {
+        .gradientBar(@pageHeaderBackground, @pageHeaderBackgroundHighlight);
 
-/* 
- * Type
- */
-.page-header {
-    border-top: 1px solid rgba(0,0,0, 0.75); 
-    border-bottom: 1px solid rgba(255,255,255, 0.33); 
+        border-top: 1px solid rgba(255,255,255,0.55);
 
-    padding-left: @gridGutterWidth; // TODO: Fix for responsive
-    padding-bottom: 0;
+        padding-left: @gridGutterWidth; // TODO: responsive
+        padding-bottom: 0;
 
-    margin-top: 0;
-    margin-bottom: 18px;
+        margin-top: 0;
+        margin-bottom: 18px;
 
-    .gradientBar(@pageHeaderBackground, @pageHeaderBackgroundHighlight);
-    .border-radius(0 @baseBorderRadius 0 0);
+        .border-radius(0 @baseBorderRadius 0 0);
 
-    text-shadow: 0 1px 1px @white;
-
-    /*
-     * Allow a <div class="pull-right"> in a page-header, 
-     * where buttons can be placed.
-     */
-    .pull-right {
-        line-height: 46px;
-        margin-right: 10px;
-    }
-
-    .btn {
-        // Darken borders on buttons in page headers
-        border-color: rgba(0,0,0,.25) rgba(0,0,0,.25) rgba(0,0,0,.30);
-    }
-
-
-    h1, h2 {
-        // Decrease header size somewhat
-        font-size: @fontSizeHuge;
-        // Repeat to override
         text-shadow: 0 1px 1px @white;
-        margin: 5px 0;
-        font-weight: normal;
+
+        /*
+         * Allow a <div class="pull-right"> in a page-header, 
+         * where buttons can be placed.
+         */
+        .pull-right {
+            line-height: @fontSizeHuge + 18px;
+            margin-right: 10px;
+        }
+
+        .btn {
+            // Darken borders on buttons in page headers
+            border-color: rgba(0,0,0,.25) rgba(0,0,0,.25) rgba(0,0,0,.30);
+        }
+
+
+        h1, h2 {
+            // Decrease header size somewhat
+            font-size: @fontSizeHuge;
+            line-height: @fontSizeHuge + 22px;
+            // Repeat to override
+            text-shadow: 0 1px 1px @white;
+            font-weight: normal;
+            margin: 0;
+        }
+    }
+
+    .sub-header {
+        padding-left: 20px;
+        .gradientBar(#e5edf2, #cdd5da);
+        text-shadow: 0px 1px 0px rgba(255,255,255, 0.75);
+        border-top: 1px solid #CFD6DB;
+        border-bottom: 1px solid rgba(0,0,0, 0.3);
+        margin-top: 13px;
+        margin-bottom: 15px;
+
+        h2, h3 {
+            font-size: @fontSizeSmall;
+            margin: 0;
+            font-family: @sansFontFamily;
+            font-weight: normal;
+            line-height: 26px;
+        }
+    }
+
+
+    section {
+        .row-fluid {
+            padding-left: @gridGutterWidth; // TODO: responsive
+        }
     }
 }
 
-.page-sub-header {
-    padding-left: 20px;
-    .gradientBar(#e5edf2, #cdd5da);
-    text-shadow: 0px 1px 0px rgba(255,255,255, 0.75);
-    border-top: 1px solid #CFD6DB;
-    border-bottom: 1px solid rgba(0,0,0, 0.3);
-    margin-top: 13px;
-    margin-bottom: 15px;
-
-    h2, h3 {
-        font-size: @fontSizeSmall;
-        margin: 0;
-        font-family: @sansFontFamily;
-        font-weight: normal;
-        line-height: 26px;
-    }
-}
 
 /*
  * Forms
