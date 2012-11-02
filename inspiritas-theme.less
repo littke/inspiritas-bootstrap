@@ -102,23 +102,32 @@ body {
     }
 }
 
+body > .container {
+    // Color the whole container like the sidebar to fix faux columns
+    background: url('images/sidebar_bg.png') repeat @sidebarBackground;
+
+    /*
+     * Pixel tweak:
+     * Increase border-radius in the top right corner to avoid the .container's 
+     * background color shining through in between the .container and the #content.
+     */
+    .border-radius(@baseBorderRadius (@baseBorderRadius + 3) @baseBorderRadius @baseBorderRadius);
+
+    // Make some space, eh.
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
 /*
  * Sidebar
- *
- * The sidebar is floated to the left. It's width is defined by @sidebarColumns (1-12).
  *
  * The .container holds the sidebar's background and the sidebar is transparent, to allow
  * the sidebar to appear to span the whole height of the .container.
  *
- * We add a margin-left to #content to avoid overlapping the floating sidebar.
- *
  */
-// TODO: adjust this for responsiveness?
-@sidebarWidth: (@gridColumnWidth * @sidebarColumns) + (@gridGutterWidth * (@sidebarColumns - 1));
-.container > aside {
-    float: left;
-    width: @sidebarWidth;
 
+.container aside {
     // Add border-radius in upper-left corner.
     .border-radius(@baseBorderRadius 0 0 0);
 
@@ -174,25 +183,12 @@ body {
 
 }
 
-body > .container {
-    // Color the whole container like the sidebar to fix faux columns
-    background: url('images/sidebar_bg.png') repeat @sidebarBackground;
-
-    /*
-     * Pixel tweak:
-     * Increase border-radius in the top right corner to avoid the .container's 
-     * background color shining through in between the .container and the #content.
-     */
-    .border-radius(@baseBorderRadius (@baseBorderRadius + 3) @baseBorderRadius @baseBorderRadius);
-
-    // Make some space, eh.
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
+/*
+ * Content - the main content area with white background
+ */
 
 #content {
     // Don't overlap the floating sidebar
-    margin-left: @sidebarWidth;
     border-left: 1px solid #2d3134;
     background-color: @white;
 
@@ -276,6 +272,34 @@ body > .container {
         }
     }
 }
+
+/* 
+ *
+ * Some positioning tweaks for the content area
+ *
+ * We want to remove the margin-left of the content area, to position it just next to the sidebar.
+ * If we do that, the width of the element is modified and thus we readd the width of the removed margin.
+ *
+ * However, since the size of the margin differs in different screen sizes, we need to do this multiple times
+ * using media queries.
+ * 
+ * The width of the content area is defined by @contentColumns in variables.less.
+ *
+ */
+#content-wrapper {
+    margin-left: 0;
+    width: (@gridColumnWidth * @contentColumns) + (@gridGutterWidth * (@contentColumns - 1)) + @gridGutterWidth;
+}
+
+@media (min-width: 1200px) {
+    #content-wrapper {
+        width: (@gridColumnWidth1200 * @contentColumns) + (@gridGutterWidth1200 * (@contentColumns - 1)) + @gridGutterWidth1200;
+    }
+}
+
+// TODO: 727 etc
+
+
 
 
 /*
