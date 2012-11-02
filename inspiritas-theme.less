@@ -269,9 +269,15 @@ body > .container {
     section {
         .row-fluid {
             padding-left: @gridGutterWidth; // TODO: responsive
+            padding-right: @gridGutterWidth;
+            .box-sizing(border-box); // TODO: responsive? decrease width
         }
     }
 }
+
+/*
+ * Responsiveness
+ */
 
 /* 
  *
@@ -286,20 +292,30 @@ body > .container {
  * The width of the content area is defined by @contentColumns in variables.less.
  *
  */
-#content-wrapper {
-    margin-left: 0;
-    width: (@gridColumnWidth * @contentColumns) + (@gridGutterWidth * (@contentColumns - 1)) + @gridGutterWidth;
-}
 
-@media (min-width: 1200px) {
+// Small laptops, portrait tablets
+@media (min-width: 768px) and (max-width: 979px) {
     #content-wrapper {
-        width: (@gridColumnWidth1200 * @contentColumns) + (@gridGutterWidth1200 * (@contentColumns - 1)) + @gridGutterWidth1200;
+        margin-left: 0;
+        width: (@gridColumnWidth768 * @contentColumns) + (@gridGutterWidth768 * (@contentColumns - 1)) + @gridGutterWidth768;
     }
 }
 
-// TODO: 727 etc
+// Default
+@media (min-width: 980px) and (max-width: 1199px) {
+    #content-wrapper {
+        margin-left: 0;
+        width: (@gridColumnWidth * @contentColumns) + (@gridGutterWidth * (@contentColumns - 1)) + @gridGutterWidth;
+    }
+}
 
-
+// Large display
+@media (min-width: 1200px) {
+    #content-wrapper {
+        margin-left: 0;
+        width: (@gridColumnWidth1200 * @contentColumns) + (@gridGutterWidth1200 * (@contentColumns - 1)) + @gridGutterWidth1200;
+    }
+}
 
 
 /*
