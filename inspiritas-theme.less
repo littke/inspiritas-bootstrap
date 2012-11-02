@@ -210,6 +210,7 @@ body > .container {
         .gradientBar(@pageHeaderBackground, @pageHeaderBackgroundHighlight);
 
         border-top: 1px solid rgba(255,255,255,0.55);
+        border-bottom: 1px solid #a3a3a3;
 
         padding-left: @gridGutterWidth; // TODO: responsive
         padding-bottom: 0;
@@ -321,6 +322,57 @@ body > .container {
 /*
  * Forms
  */
+
+// TODO: prepend/append, selects, focus
+/*
+ * Provide a nice outline for all <input type="text">, with different
+ * colors depending on the state of the input (error, warning, success).
+ *
+ * We use a 'hardened' box-shadow to create the outline in order for 
+ * border-radius to be respected, and since <input> can't have psuedo-
+ * elements.
+ *
+ */
+.control-group {
+    /*
+     * Don't color the label text for an input which has an 
+     * error, success or warning. Makes it too colorful.
+     */
+    label {
+        color: @textColor !important;
+    }
+
+    .help-inline {
+        // Increase from 5px
+        padding-left: 15px;
+    }
+
+    input[type=text] {
+        box-shadow: 0 0 0 @inputOutlineSize @inputOutlineColor,
+            inset 0 2px 3px @inputOutlineColor;
+    }
+
+    &.error {
+        input[type=text] {
+            box-shadow: 0 0 0 @inputOutlineSize @errorOutlineColor,
+                inset 0 2px 3px @errorOutlineColor;
+        }
+    }
+
+    &.warning {
+        input[type=text] {
+            box-shadow: 0 0 0 @inputOutlineSize @warningOutlineColor,
+                inset 0 2px 3px @warningOutlineColor;
+        }
+    }
+
+    &.success {
+        input[type=text] {
+            box-shadow: 0 0 0 @inputOutlineSize @successOutlineColor,
+                inset 0 2px 3px @successOutlineColor;
+        }
+    }
+}
 
 .form-horizontal {
     // Left-align the centered, Bootstrappy-looking, input labels
