@@ -323,20 +323,19 @@ body > .container {
  * Forms
  */
 
-// TODO: prepend/append, selects, focus
+// TODO: prepend/append, selects
 /*
  * Provide a nice outline for all <input type="text">, with different
  * colors depending on the state of the input (error, warning, success).
  *
- * We use a 'hardened' box-shadow to create the outline in order for 
- * border-radius to be respected, and since <input> can't have psuedo-
- * elements.
+ * We use a 'hardened' box-shadow to create the outline.
  *
  */
 .control-group {
     /*
-     * Don't color the label text for an input which has an 
-     * error, success or warning. Makes it too colorful.
+     * Keep the standard text color of input labels when
+     * the input has an error. Colorizing it makes it too colorful
+     * for Inspiritas.
      */
     label {
         color: @textColor !important;
@@ -347,27 +346,44 @@ body > .container {
         padding-left: 15px;
     }
 
-    input[type=text] {
-        box-shadow: 0 0 0 @inputOutlineSize @inputOutlineColor,
+    /*
+     * Create the outline using box-shadow (see above comment)
+     */
+    input[type=text], textarea {
+        @shadow: 0 0 0 @inputOutlineSize @inputOutlineColor, 
             inset 0 2px 3px @inputOutlineColor;
+        .box-shadow(@shadow);
+
     }
 
+    /*
+     * Override the default focus look for elements using our nicer outline.
+     */
+    textarea:focus, input[type=text]:focus {
+        @shadow: inset 0 1px 1px rgba(0,0,0,.075), 
+            0 0 0 @inputOutlineSize #e9f1f5;
+        .box-shadow(@shadow);
+    }
+
+    /*
+     * Color the outline differently depending on state.
+     */
     &.error {
-        input[type=text] {
+        input[type=text], textarea {
             box-shadow: 0 0 0 @inputOutlineSize @errorOutlineColor,
                 inset 0 2px 3px @errorOutlineColor;
         }
     }
 
     &.warning {
-        input[type=text] {
+        input[type=text], textarea {
             box-shadow: 0 0 0 @inputOutlineSize @warningOutlineColor,
                 inset 0 2px 3px @warningOutlineColor;
         }
     }
 
     &.success {
-        input[type=text] {
+        input[type=text], textarea {
             box-shadow: 0 0 0 @inputOutlineSize @successOutlineColor,
                 inset 0 2px 3px @successOutlineColor;
         }
