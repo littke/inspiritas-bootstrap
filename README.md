@@ -10,7 +10,9 @@ PSD but as an entirely coded frontend theme.
 - 4 Photoshop files (PSDs) with the complete design
 - Free and maintained
 - Uses overrides to make future updates to Bootstrap easy to get
-- Just fork it and get started
+- BONUS: Includes styling for Highcharts charting library
+
+Just fork it and get started.
 
 ## Origins
 
@@ -33,7 +35,7 @@ If you want to edit anything, fork or clone the repo and open variables.less.
 It contains the original Bootstrap variables along with some new ones for Inspiritas.
 
 Make whichever changes you want and then run a <a href="#">less compiler</a> to create
-the minified CSS for you.
+the updated and minified CSS for you.
 
 ## Adding overrides
 

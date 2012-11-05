@@ -106,12 +106,7 @@ body > .container {
     // Color the whole container like the sidebar to fix faux columns
     background: url('images/sidebar_bg.png') repeat @sidebarBackground;
 
-    /*
-     * Pixel tweak:
-     * Increase border-radius in the top right corner to avoid the .container's 
-     * background color shining through in between the .container and the #content.
-     */
-    .border-radius(@baseBorderRadius (@baseBorderRadius + 3) @baseBorderRadius @baseBorderRadius);
+    .border-radius(@borderRadiusLarge);
 
     // Make some space, eh.
     margin-top: 40px;
@@ -132,7 +127,7 @@ body > .container {
     .border-radius(@baseBorderRadius 0 0 0);
 
     nav { 
-        margin-top: 40px;
+        margin-top: 80px;
         border-top: 1px solid #1c1f20; 
 
         ul li {
@@ -197,6 +192,11 @@ body > .container {
         font-family: @serifFontFamily;
     }
 
+    .kpi + div small {
+        .text-overflow();
+        display: block;
+    }
+
     small {
         color: @gray777;
     }
@@ -214,9 +214,6 @@ body > .container {
 
         padding-left: @gridGutterWidth; // TODO: responsive
         padding-bottom: 0;
-
-        margin-top: 0;
-        margin-bottom: 18px;
 
         .border-radius(0 @baseBorderRadius 0 0);
 
@@ -254,8 +251,6 @@ body > .container {
         text-shadow: 0px 1px 0px rgba(255,255,255, 0.75);
         border-top: 1px solid #CFD6DB;
         border-bottom: 1px solid rgba(0,0,0, 0.3);
-        margin-top: 13px;
-        margin-bottom: 15px;
 
         h2, h3 {
             font-size: @fontSizeSmall;
@@ -266,13 +261,18 @@ body > .container {
         }
     }
 
-
     section {
         .row-fluid {
             padding-left: @gridGutterWidth; // TODO: responsive
             padding-right: @gridGutterWidth;
+            padding-top: 15px;
+            padding-bottom: 10px;
             .box-sizing(border-box); // TODO: responsive? decrease width
         }
+    }
+
+    .row-fluid-alternate-bg {
+        background-color: #fafafa;
     }
 }
 
@@ -357,12 +357,11 @@ body > .container {
     }
 
     /*
-     * Override the default focus look for elements using our nicer outline.
+     * Override the default focus outline for the elements that are using our 
+     * nicer outline.
      */
     textarea:focus, input[type=text]:focus {
-        @shadow: inset 0 1px 1px rgba(0,0,0,.075), 
-            0 0 0 @inputOutlineSize #e9f1f5;
-        .box-shadow(@shadow);
+        .box-shadow(0 0 0 @inputOutlineSize #e3eff5);
     }
 
     /*

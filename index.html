@@ -84,9 +84,10 @@
         </div>
         <div class="span9" id="content-wrapper">
             <div id="content">
-                <!-- Typography
+
+                <!-- Navbar
                 ================================================== -->
-                <section id="typography">
+                <section id="stats">
                   <header>
                     <div class="pull-right">
                         <a class="btn btn-small">Edit</a>
@@ -96,66 +97,32 @@
                     <h1>Dashboard</h1>
                   </header>
                   <div class="row-fluid">
-                    <div class="span3">
+                    <div class="span2">
                         <div class="kpi">45,000</div>
-                        <div><small>minutes per second</small></div>
+                        <div><small>total income</small></div>
                     </div>
-                    <div class="span3">
+                    <div class="span2">
                         <div class="kpi">32,403</div>
                         <div><small>torsdag på fredag</small></div>
                     </div>
-                    <div class="span3">
+                    <div class="span2">
                         <div class="kpi">21,388</div>
-                        <div><small>claims today</small></div>
+                        <div><small>scores today</small></div>
                     </div>
-                    <div class="span3">
+                    <div class="span2">
                         <div class="kpi">2,105</div>
-                        <div><small>income per second</small></div>
+                        <div><small>income today</small></div>
+                    </div>
+                    <div class="span2">
+                        <div class="kpi">3,339</div>
+                        <div><small>income yesterday</small></div>
+                    </div>
+                    <div class="span2">
+                        <div class="kpi">8,100</div>
+                        <div><small>income 2012</small></div>
                     </div>
                   </div>
-
-                  <div class="sub-header">
-                    <h2>Typography</h2>
-                  </div>
-
-                  <!-- Headings & Paragraph Copy -->
-                  <div class="row-fluid">
-
-                    <div class="span4">
-                      <div class="well">
-                        <h1>h1. Heading 1</h1>
-                        <h2>h2. Heading 2</h2>
-                        <h3>h3. Heading 3</h3>
-                        <h4>h4. Heading 4</h4>
-                        <h5>h5. Heading 5</h5>
-                        <h6>h6. Heading 6</h6>
-                      </div>
-                    </div>
-
-                    <div class="span4">
-                      <h3>Example body text</h3>
-                      <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.</p>
-                    </div>
-
-                    <div class="span4">
-                      <h3>Example addresses</h3>
-                      <address>
-                        <strong>Twitter, Inc.</strong><br>
-                        795 Folsom Ave, Suite 600<br>
-                        San Francisco, CA 94107<br>
-                        <abbr title="Phone">P:</abbr> (123) 456-7890
-                      </address>
-                      <address>
-                        <strong>Full Name</strong><br>
-                        <a href="mailto:#">first.last@gmail.com</a>
-                      </address>
-                    </div>
-
-                  </div>
-
                 </section>
-
 
                 <!-- Navbar
                 ================================================== 
@@ -261,7 +228,128 @@
 
                 </section> -->
 
+                <!-- Graph
+                ================================================== -->
+                <section id="forms">
+                  <div class="sub-header">
+                    <h2>Statistical overview</h2>
+                  </div>
+                  <div class="row-fluid row-fluid-alternate-bg">
+                    <div class="span12">
+                        <div id="mainChart"></div>
+                    </div>
+                  </div>
+                </section>
 
+
+
+
+                <!-- Forms
+                ================================================== -->
+                <section id="forms">
+                  <div class="sub-header">
+                    <h2>Add a new campaign</h2>
+                  </div>
+
+                  <div class="row-fluid">
+                    <div class="span12">
+                      <form class="form-horizontal">
+                        <fieldset>
+                          <div class="control-group">
+                            <label class="control-label" for="input01">Campaign name</label>
+                            <div class="controls">
+                              <input type="text" class="input-large" id="input01">
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label" for="input01">Campaign tagline</label>
+                            <div class="controls">
+                              <input type="text" class="input-large" id="input01">
+                              <p class="help-block">Some help text looks like this.</p>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label" for="input01">Max weekly amount</label>
+                            <div class="controls">
+                              <input type="text" class="input-small">
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label" for="input01">Amount per day</label>
+                            <div class="controls">
+                              <input type="text" class="input-small">
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label" for="optionsCheckbox">Public</label>
+                            <div class="controls">
+                              <label class="checkbox">
+                                <input type="checkbox" id="optionsCheckbox" value="option1">
+                                Publish immediately
+                              </label>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label" for="select01">Country</label>
+                            <div class="controls">
+                              <select id="select01">
+                                <option>Sweden</option>
+                                <option>Kenya</option>
+                                <option>Zimbabwe</option>
+                                <option>United States</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label" for="textarea">Description</label>
+                            <div class="controls">
+                              <textarea class="input-xlarge" id="textarea" rows="5"></textarea>
+                            </div>
+                          </div>
+                          <div class="control-group warning">
+                            <label class="control-label" for="inputWarning">Input with warning</label>
+                            <div class="controls">
+                              <input type="text" id="inputWarning">
+                              <span class="help-inline">Something may have gone wrong</span>
+                            </div>
+                          </div>
+                          <div class="control-group error">
+                            <label class="control-label" for="inputError">Input with error</label>
+                            <div class="controls">
+                              <input type="text" id="inputError">
+                              <span class="help-inline">Please correct the error</span>
+                            </div>
+                          </div>
+                          <div class="control-group success">
+                            <label class="control-label" for="inputSuccess">Input with success</label>
+                            <div class="controls">
+                              <input type="text" id="inputSuccess">
+                              <span class="help-inline">Woohoo!</span>
+                            </div>
+                          </div>
+                          <div class="control-group success">
+                            <label class="control-label" for="selectError">Select with success</label>
+                            <div class="controls">
+                              <select id="selectError">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                              </select>
+                              <span class="help-inline">Woohoo!</span>
+                            </div>
+                          </div>
+                          <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="reset" class="btn">Cancel</button>
+                          </div>
+                        </fieldset>
+                      </form>
+                    </div>
+                  </div>
+
+                </section>
 
                 <!-- Buttons
                 ================================================== -->
@@ -271,7 +359,7 @@
                   </div>
                   <div class="row-fluid">
                     <div class="span12">
-                      <table class="table table-bordered table-striped">
+                      <table class="table">
                         <thead>
                           <tr>
                             <th>Normal</th>
@@ -329,161 +417,6 @@
                   </div>
                 </section>
 
-
-                <!-- Forms
-                ================================================== -->
-                <section id="forms">
-                  <div class="sub-header">
-                    <h2>Forms</h2>
-                  </div>
-
-                  <div class="row-fluid">
-                    <div class="span12">
-
-                        <form class="form-search">
-                          <input type="text" placeholder="Find artists or hacks..." class="input-medium search-query">
-                          <button type="submit" class="btn">Search</button>
-                        </form>
-
-                        <form class="form-search">
-                          <input type="text" class="input-small" placeholder="Email">
-                          <input type="password" class="input-small" placeholder="Password">
-                          <button type="submit" class="btn">Go</button>
-                        </form>
-
-
-                      <form class="form-horizontal">
-                        <fieldset>
-                          <legend>Controls Bootstrap supports</legend>
-                          <div class="control-group">
-                            <label class="control-label" for="input01">Campaign name</label>
-                            <div class="controls">
-                              <input type="text" class="input-xlarge" id="input01">
-                            </div>
-                          </div>
-                          <div class="control-group">
-                            <label class="control-label" for="input01">Campaign tagline</label>
-                            <div class="controls">
-                              <input type="text" class="input-xlarge" id="input01">
-                              <p class="help-block">Some help text looks like this.</p>
-                            </div>
-                          </div>
-                          <div class="control-group">
-                            <label class="control-label" for="optionsCheckbox">Checkbox</label>
-                            <div class="controls">
-                              <label class="checkbox">
-                                <input type="checkbox" id="optionsCheckbox" value="option1">
-                                Linus uses svn at home
-                              </label>
-                            </div>
-                          </div>
-                          <div class="control-group">
-                            <label class="control-label" for="select01">Select list</label>
-                            <div class="controls">
-                              <select id="select01">
-                                <option>something</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="control-group">
-                            <label class="control-label" for="multiSelect">Multicon-select</label>
-                            <div class="controls">
-                              <select multiple="multiple" id="multiSelect">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="control-group">
-                            <label class="control-label" for="fileInput">File input</label>
-                            <div class="controls">
-                              <input class="input-file" id="fileInput" type="file">
-                            </div>
-                          </div>
-                          <div class="control-group">
-                            <label class="control-label" for="textarea">Textarea</label>
-                            <div class="controls">
-                              <textarea class="input-xlarge" id="textarea" rows="3"></textarea>
-                            </div>
-                          </div>
-                          <div class="control-group">
-                            <label class="control-label" for="focusedInput">Focused input</label>
-                            <div class="controls">
-                              <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…">
-                            </div>
-                          </div>
-                          <div class="control-group">
-                            <label class="control-label">Uneditable input</label>
-                            <div class="controls">
-                              <span class="input-xlarge uneditable-input">Some value here</span>
-                            </div>
-                          </div>
-                          <div class="control-group">
-                            <label class="control-label" for="disabledInput">Disabled input</label>
-                            <div class="controls">
-                              <input class="input-xlarge disabled" id="disabledInput" type="text" placeholder="Disabled input here…" disabled>
-                            </div>
-                          </div>
-                          <div class="control-group">
-                            <label class="control-label" for="optionsCheckbox2">Disabled checkbox</label>
-                            <div class="controls">
-                              <label class="checkbox">
-                                <input type="checkbox" id="optionsCheckbox2" value="option1" disabled>
-                                This is a disabled checkbox
-                              </label>
-                            </div>
-                          </div>
-                          <div class="control-group warning">
-                            <label class="control-label" for="inputWarning">Input with warning</label>
-                            <div class="controls">
-                              <input type="text" id="inputWarning">
-                              <span class="help-inline">Something may have gone wrong</span>
-                            </div>
-                          </div>
-                          <div class="control-group error">
-                            <label class="control-label" for="inputError">Input with error</label>
-                            <div class="controls">
-                              <input type="text" id="inputError">
-                              <span class="help-inline">Please correct the error</span>
-                            </div>
-                          </div>
-                          <div class="control-group success">
-                            <label class="control-label" for="inputSuccess">Input with success</label>
-                            <div class="controls">
-                              <input type="text" id="inputSuccess">
-                              <span class="help-inline">Woohoo!</span>
-                            </div>
-                          </div>
-                          <div class="control-group success">
-                            <label class="control-label" for="selectError">Select with success</label>
-                            <div class="controls">
-                              <select id="selectError">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                              </select>
-                              <span class="help-inline">Woohoo!</span>
-                            </div>
-                          </div>
-                          <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Save changes</button>
-                            <button type="reset" class="btn">Cancel</button>
-                          </div>
-                        </fieldset>
-                      </form>
-                    </div>
-                  </div>
-
-                </section>
 
 
               <!-- Miscellaneous
@@ -576,7 +509,7 @@
                     <h3 id="alerts">Alerts</h3>
 
                     <div class="row-fluid">
-                        <div class="span9">
+                        <div class="span12">
                             <div class="alert alert-block">
                               <a class="close">&times;</a>
                               <h4 class="alert-heading">Alert block</h4>
@@ -585,19 +518,19 @@
                         </div>
                     </div>
                     <div class="row-fluid">
-                      <div class="span3">
+                      <div class="span4">
                         <div class="alert alert-error">
                           <a class="close">&times;</a>
                           <strong>Error</strong> Change a few things up and try submitting again.
                         </div>
                       </div>
-                      <div class="span3">
+                      <div class="span4">
                         <div class="alert alert-success">
                           <a class="close">&times;</a>
                           <strong>Success</strong> You successfully read this important alert message.
                         </div>
                       </div>
-                      <div class="span3">
+                      <div class="span4">
                         <div class="alert alert-info">
                           <a class="close">&times;</a>
                           <strong>Information</strong> This alert needs your attention, but it's not super important.
@@ -606,6 +539,51 @@
                     </div>
                   </div>
                 </div>
+
+            </section>
+
+            <!-- Typography
+            ================================================== -->
+            <section id="typography">
+              <div class="sub-header">
+                <h2>Typography</h2>
+              </div>
+
+              <!-- Headings & Paragraph Copy -->
+              <div class="row-fluid">
+
+                <div class="span4">
+                  <div class="well">
+                    <h1>h1. Heading 1</h1>
+                    <h2>h2. Heading 2</h2>
+                    <h3>h3. Heading 3</h3>
+                    <h4>h4. Heading 4</h4>
+                    <h5>h5. Heading 5</h5>
+                    <h6>h6. Heading 6</h6>
+                  </div>
+                </div>
+
+                <div class="span4">
+                  <h3>Example body text</h3>
+                  <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                  <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.</p>
+                </div>
+
+                <div class="span4">
+                  <h3>Example addresses</h3>
+                  <address>
+                    <strong>Twitter, Inc.</strong><br>
+                    795 Folsom Ave, Suite 600<br>
+                    San Francisco, CA 94107<br>
+                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                  </address>
+                  <address>
+                    <strong>Full Name</strong><br>
+                    <a href="mailto:#">first.last@gmail.com</a>
+                  </address>
+                </div>
+
+              </div>
 
             </section>
 
@@ -628,6 +606,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/inspiritas.js"></script>
     <script src="bootstrap/js/bootstrap-affix.js"></script>
 
 
