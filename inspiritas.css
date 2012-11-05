@@ -7509,6 +7509,47 @@ body {
   font-family: "League Gothic", "Museo Slab", "Helvetica Neue", Helvetica, arial, sans-serif;
   font-size: 37px;
   margin-left: 15px;
+  text-shadow: 0 1px 1px black;
+}
+.navbar-static-top .tagline {
+  line-height: 61px;
+  color: #999999;
+  font-weight: italic;
+  font-size: 11px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+}
+.navbar-static-top .auth {
+  line-height: 18px;
+  color: #999999;
+  margin-right: 20px;
+  position: relative;
+  top: 10px;
+}
+.navbar-static-top .auth img {
+  position: relative;
+  top: -2px;
+  border: 3px solid #2c3234;
+  float: left;
+}
+.navbar-static-top .auth span.name {
+  margin-left: 10px;
+  position: relative;
+  top: 3px;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px black;
+}
+.navbar-static-top .auth span.links {
+  margin-left: 10px;
+}
+.navbar-static-top .auth span.links a {
+  color: #f9601c;
+  font-size: 11px;
+}
+.navbar-static-top .auth span.links a + a {
+  margin-left: 3px;
 }
 body > .container {
   background: url('images/sidebar_bg.png') repeat #353c3e;
@@ -7531,7 +7572,7 @@ body > .container {
   border-radius: 5px 0 0 0;
 }
 .container aside nav {
-  margin-top: 80px;
+  margin-top: 20px;
   border-top: 1px solid #1c1f20;
 }
 .container aside nav ul li {
@@ -7630,7 +7671,7 @@ body > .container {
 }
 #content header .pull-right {
   line-height: 41.400000000000006px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 #content header .btn {
   border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.3);

@@ -33,6 +33,58 @@ body {
 
         // Align it with the text of the sidebar links
         margin-left: 15px;
+
+        text-shadow: 0 1px 1px black;
+    }
+
+    .tagline {
+        line-height: @navbarInverseBrandFontSize + 24px;
+        color: @grayLight;
+        font-weight: italic;
+        font-size: @fontSizeMini;
+        text-shadow: 0 1px 1px rgba(0,0,0,0.45);
+    }
+
+    .auth {
+        line-height: 18px;
+        color: @grayLight;
+        margin-right: @gridGutterWidth; // TODO: responsive
+        position: relative;
+        top: 10px;
+
+        img {
+            position: relative;
+            top: -2px;
+
+            border: 3px solid #2c3234;
+            float: left;
+        }
+
+        span.name {
+            margin-left: 10px;
+
+            position: relative;
+            top: 3px;
+
+            font-weight: bold;
+            color: @white;
+            font-size: @fontSizeMini;
+            text-transform: uppercase;
+            text-shadow: 0 1px 1px black;
+        }
+
+        span.links {
+            margin-left: 10px;
+
+            a {
+                color: @orange;
+                font-size: @fontSizeMini;
+            }
+
+            a + a {
+                margin-left: 3px;
+            }
+        }
     }
 }
 
@@ -61,7 +113,7 @@ body > .container {
     .border-radius(@baseBorderRadius 0 0 0);
 
     nav { 
-        margin-top: 80px;
+        margin-top: 20px;
         border-top: 1px solid #1c1f20; 
 
         ul li {
@@ -159,7 +211,7 @@ body > .container {
          */
         .pull-right {
             line-height: @fontSizeHuge + 18px;
-            margin-right: 10px;
+            margin-right: @gridGutterWidth; // TODO: responsive
         }
 
         .btn {
