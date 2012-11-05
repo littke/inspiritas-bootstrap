@@ -7841,12 +7841,21 @@ body > .container {
 .control-group.success textarea {
   box-shadow: 0 0 0 5px #eef6e7, inset 0 2px 3px #eef6e7;
 }
+.form-horizontal {
+  margin-top: 8px;
+}
+.form-horizontal .control-group {
+  margin-bottom: 25px;
+}
 .form-horizontal .control-label {
   text-align: left;
 }
 .form-horizontal .help-block {
   font-size: 11.049999999999999px;
   line-height: 15.049999999999999px;
+}
+.form-actions {
+  margin: 0;
 }
 /*
  * Buttons

@@ -361,6 +361,7 @@ body > .container {
  *
  */
 .control-group {
+
     /*
      * Keep the standard text color of input labels when
      * the input has an error. Colorizing it makes it too colorful
@@ -419,6 +420,13 @@ body > .container {
 }
 
 .form-horizontal {
+    margin-top: 8px;
+
+    .control-group {
+        // Increase row height of each input, we've added so much outline
+        margin-bottom: 25px;
+    }
+
     // Left-align the centered, Bootstrappy-looking, input labels
     .control-label {
         text-align: left;
@@ -428,7 +436,10 @@ body > .container {
         font-size: @fontSizeSmall;
         line-height: @fontSizeSmall + 4px;
     }
+}
 
+.form-actions {
+    margin: 0;
 }
 
 /*
