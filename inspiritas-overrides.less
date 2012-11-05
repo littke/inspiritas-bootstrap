@@ -263,6 +263,49 @@ body > .container {
 }
 
 /*
+ * Tables
+ */
+
+.table-striped {
+    tbody {
+        tr:nth-child(odd) td {
+            background-color: #f3f8fb;
+        }
+    }
+}
+
+.table {
+    tbody {
+        td {
+            color: @gray777;
+            font-size: @fontSizeMini;
+
+            &.primary {
+                color: @textColor;
+            }
+        }
+    }
+}
+
+.full-section {
+    margin-bottom: 0;
+
+    td, th {
+        padding-left: @gridGutterWidth; // TODO: responsive
+    }
+}
+
+.table-hover {
+    tbody {
+        tr:hover {
+            td, th {
+                background-color: @blueLight;
+            }
+        }
+    }
+}
+
+/*
  * Responsiveness
  */
 

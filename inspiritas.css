@@ -7723,6 +7723,30 @@ body > .container {
   background-color: #fafafa;
 }
 /*
+ * Tables
+ */
+.table-striped tbody tr:nth-child(odd) td {
+  background-color: #f3f8fb;
+}
+.table tbody td {
+  color: #777a7c;
+  font-size: 11px;
+}
+.table tbody td.primary {
+  color: #333333;
+}
+.full-section {
+  margin-bottom: 0;
+}
+.full-section td,
+.full-section th {
+  padding-left: 20px;
+}
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: #e7f1f7;
+}
+/*
  * Responsiveness
  */
 /* 
