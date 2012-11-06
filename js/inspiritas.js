@@ -11,7 +11,7 @@ new Highcharts.Chart({
     chart: {
         renderTo: 'mainChart',
         defaultSeriesType: 'spline',
-        height: '250',
+        height: 250,
         plotBorderColor: '#e3e6e8',
         plotBorderWidth: 1,
         plotBorderRadius: 0,
@@ -83,7 +83,6 @@ new Highcharts.Chart({
         }
     },
 
-    // TODO: Enable zoom.
     plotOptions: {
         series: {
             marker: {
