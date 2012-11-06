@@ -1,7 +1,7 @@
 # Inspiritas - a free Bootstrap theme 
 
 From the Swedish web design and development firm Ripple comes the
-highly anticipated release of <a href="#">Campaign UI</a> - not only as a
+highly anticipated release of <a href="http://dribbble.com/shots/156005-Campaign-UI">Campaign UI</a> - not only as a
 PSD but as an entirely coded frontend theme. 
 
 - All the goodness of Bootstrap 2
@@ -15,14 +15,14 @@ Just fork it and get started.
 
 ## Origins
 
-Jonatan Littke debuted on <a href="#">Dribbble</a> with his 'Campaign UI'
+Jonatan Littke debuted on <a href="http://www.dribbble.com">Dribbble</a> with his 'Campaign UI'
 and made it to the front page on the first day. Many have requested this
 design as a PSD and today it's released by <a href="http://www.ripplehq.com">Ripple</a>
 for free. 
 
 ## How to use
 
-1. Fork this repo or <a href="#">download the latest zip</a>.
+1. Fork this repo or <a href="https://github.com/littke/inspiritas-bootstrap/archive/master.zip">download the latest zip</a>.
 
 2. Drop the inspiritas.css into your `<head>`.
 
@@ -33,7 +33,7 @@ for free.
 If you want to edit anything, fork or clone the repo and open variables.less.
 It contains the original Bootstrap variables along with some new ones for Inspiritas.
 
-Make whichever changes you want and then run a <a href="#">less compiler</a> to create
+Make whichever changes you want and then run a less compiler to create
 the updated and minified CSS for you.
 
 ## Adding overrides
