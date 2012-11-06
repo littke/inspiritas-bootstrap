@@ -7,7 +7,6 @@ PSD but as an entirely coded frontend theme.
 - All the goodness of Bootstrap 2
 - A hand-crafted, completely new visual theme
 - Easy to customize
-- 4 Photoshop files (PSDs) with the complete design
 - Free and maintained
 - Uses overrides to make future updates to Bootstrap easy to get
 - BONUS: Includes styling for Highcharts charting library
@@ -25,7 +24,7 @@ for free.
 
 1. Fork this repo or <a href="#">download the latest zip</a>.
 
-2. Drop the inspiritas.min.css into your `<head>`.
+2. Drop the inspiritas.css into your `<head>`.
 
 3. Use it as you would the <a href="http://twitter.github.com/bootstrap/">regular Bootstrap</a>. It's that simple.
 
