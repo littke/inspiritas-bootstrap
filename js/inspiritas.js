@@ -25,7 +25,7 @@ new Highcharts.Chart({
 
     /*
      * NOTE: Highcharts is FREE for non-commercial projects only,
-     * and requires the credits ("Highcarts.com" in the corner).
+     * and requires the credits ("Highcharts.com" in the corner).
      *
      * If you've purchased a license, you can remove the credit by
      * adding `enabled: false` to `credits`.
