@@ -33,8 +33,8 @@ new Highcharts.Chart({
      */
     credits: {
         style: {
-            color: '#9fa2a5',
-        },
+            color: '#9fa2a5'
+        }
     },
 
     title: {
@@ -51,7 +51,7 @@ new Highcharts.Chart({
         itemStyle: {
             fontSize: '11px',
             color: '#1E1E1E'
-        },
+        }
     },
 
     yAxis: {
@@ -63,8 +63,8 @@ new Highcharts.Chart({
         labels: {
             style: {
                 color: '#9fa2a5'
-            },
-        },
+            }
+        }
     },
 
     xAxis: {
@@ -79,8 +79,8 @@ new Highcharts.Chart({
             x: 0,
             style: {
                 color: '#9fa2a5'
-            },
-        },
+            }
+        }
     },
 
     // TODO: Enable zoom.

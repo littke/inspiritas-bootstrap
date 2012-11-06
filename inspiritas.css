@@ -7521,6 +7521,7 @@ body {
 }
 .navbar .auth {
   line-height: 18px;
+  min-width: 150px;
   color: #999999;
   margin-right: 20px;
   position: relative;
