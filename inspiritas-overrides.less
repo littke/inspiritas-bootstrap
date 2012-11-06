@@ -9,6 +9,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face { 
     font-family: 'Museo Slab';
     src: url('fonts/museo_slab_500-webfont.eot');
@@ -26,7 +27,7 @@ body {
     background: url('images/bg.png') repeat @bodyBackground;
 }
 
-.navbar-static-top {
+.navbar {
     .brand {
         font-family: @brandFontFamily;
         font-size: @navbarInverseBrandFontSize;
@@ -34,10 +35,11 @@ body {
         // Align it with the text of the sidebar links
         margin-left: 15px;
 
-        text-shadow: 0 1px 1px black;
+        text-shadow: 0 1px 1px @black;
     }
 
     .tagline {
+        float: left;
         line-height: @navbarInverseBrandFontSize + 24px;
         color: @grayLight;
         font-weight: italic;
@@ -48,11 +50,11 @@ body {
     .auth {
         line-height: 18px;
         color: @grayLight;
-        margin-right: @gridGutterWidth; // TODO: responsive
+        margin-right: @gridGutterWidth;
         position: relative;
         top: 10px;
 
-        img {
+        img.avatar {
             position: relative;
             top: -2px;
 
@@ -70,7 +72,7 @@ body {
             color: @white;
             font-size: @fontSizeMini;
             text-transform: uppercase;
-            text-shadow: 0 1px 1px black;
+            text-shadow: 0 1px 1px @black;
         }
 
         span.links {
@@ -84,6 +86,14 @@ body {
             a + a {
                 margin-left: 3px;
             }
+        }
+    }
+
+    .nav-collapse.collapse.in {
+        .auth {
+            float: left;
+            margin-left: @gridGutterWidth768;
+            margin-bottom: 30px;
         }
     }
 }
@@ -118,9 +128,7 @@ body > .container {
 
         ul li {
             font-size: @fontSizeLarge;
-            // TODO: variables?
             background: #20282B;
-            // TODO? IE?
             border-top: 1px solid rgba(255,255,255, 0.05);
             border-bottom: 1px solid rgba(0,0,0, 0.75);
             border-right: 1px solid rgba(0,0,0, 0.75);
@@ -131,8 +139,9 @@ body > .container {
                 margin-right: 5px;
             }
 
+            // A nice, pumpkin-y orange selected menu item
             &.selected {
-                .gradientBar(#ff764e, #d64926); // TODO: variables?
+                .gradientBar(#ff764e, #d64926); 
                 border-top: 1px solid #d27349; 
                 border-bottom: 1px solid rgba(0,0,0,0.9);
 
@@ -169,10 +178,14 @@ body > .container {
  */
 
 #content {
-    // Don't overlap the floating sidebar
+    border: 1px solid #b8c1c7;
     border-left: 1px solid #2d3134;
     background-color: @white;
 
+    // Add border-radius in upper-right and lower-right corners
+    .border-radius(0 @baseBorderRadius @baseBorderRadius 0);
+
+    // Stats on the Dashboard
     .kpi {
         font-size: @fontSizeHuge;
         font-family: @serifFontFamily;
@@ -187,19 +200,16 @@ body > .container {
         color: @gray777;
     }
 
-    // Add border-radius in upper-right and lower-right corners
-    .border-radius(0 @baseBorderRadius @baseBorderRadius 0);
-    border-top: 1px solid #b8c1c7;
-    border-right: 1px solid #b8c1c7;
-    border-bottom: 1px solid #b8c1c7;
-
+    /*
+     * The main header of each page, in the example page this is called 'Dashboard'
+     */
     header {
         .gradientBar(@pageHeaderBackground, @pageHeaderBackgroundHighlight);
 
         border-top: 1px solid rgba(255,255,255,0.55);
         border-bottom: 1px solid #a3a3a3;
 
-        padding-left: @gridGutterWidth; // TODO: responsive
+        padding-left: @gridGutterWidth;
         padding-bottom: 0;
 
         .border-radius(0 @baseBorderRadius 0 0);
@@ -212,7 +222,7 @@ body > .container {
          */
         .pull-right {
             line-height: @fontSizeHuge + 18px;
-            margin-right: @gridGutterWidth; // TODO: responsive
+            margin-right: @gridGutterWidth;
         }
 
         .btn {
@@ -233,7 +243,7 @@ body > .container {
     }
 
     .sub-header {
-        padding-left: 20px;
+        padding-left: @gridGutterWidth;
         .gradientBar(#e5edf2, #cdd5da);
         text-shadow: 0px 1px 0px rgba(255,255,255, 0.75);
         border-top: 1px solid #CFD6DB;
@@ -244,16 +254,13 @@ body > .container {
             margin: 0;
             font-family: @sansFontFamily;
             font-weight: normal;
-            line-height: 26px;
+            line-height: @baseLineHeight + 6px;
         }
     }
 
     section {
         .row-fluid {
-            padding-left: @gridGutterWidth; // TODO: responsive
-            padding-right: @gridGutterWidth;
-            padding-top: 15px;
-            padding-bottom: 10px;
+            padding: 12px @gridGutterWidth 10px;
             .box-sizing(border-box); // TODO: responsive? decrease width
         }
     }
@@ -270,7 +277,17 @@ body > .container {
 .table-striped {
     tbody {
         tr:nth-child(odd) td {
-            background-color: #f3f8fb;
+            background-color: @blueLighter;
+        }
+    }
+}
+
+.table-hover {
+    tbody {
+        tr:hover {
+            td, th {
+                background-color: @blueLight;
+            }
         }
     }
 }
@@ -286,7 +303,7 @@ body > .container {
             }
 
             .progress-mini {
-                width: 80px;
+                max-width: 80px;
             }
         }
     }
@@ -296,47 +313,80 @@ body > .container {
     margin-bottom: 0;
 
     td:first-child, th:first-child {
-        padding-left: @gridGutterWidth; // TODO: responsive
+        padding-left: @gridGutterWidth;
     }
 
     td:last-child, th:last-child {
-        padding-right: @gridGutterWidth; // TODO: responsive
-    }
-}
-
-.table-hover {
-    tbody {
-        tr:hover {
-            td, th {
-                background-color: @blueLight;
-            }
-        }
+        padding-right: @gridGutterWidth;
     }
 }
 
 /*
  * Responsiveness
- */
-
-/* 
  *
- * Some positioning tweaks for the content area
+ * When adding margins and paddings throughout the theme, Bootstrap provides us with nice
+ * variables to get the width of the grid gutters. However, these variables are static and 
+ * does not take into account the current screen size, which might alter the width of the gutters.
  *
- * We want to remove the margin-left of the content area, to position it just next to the sidebar.
- * If we do that, the width of the element is modified and thus we readd the width of the removed margin.
- *
- * However, since the size of the margin differs in different screen sizes, we need to do this multiple times
- * using media queries.
- * 
- * The width of the content area is defined by @contentColumns in variables.less.
+ * Therefore, we use @gridGutterWidth as a basic value and then, below, we override each attribute 
+ * that uses this variable.
  *
  */
 
 // Small laptops, portrait tablets
 @media (min-width: 768px) and (max-width: 979px) {
+
+    /* 
+     *
+     * Some positioning tweaks for the content area
+     *
+     * We want to remove the margin-left of the content area, to position it just next to the sidebar.
+     * If we do that, the width of the element is modified and thus we readd the width of the removed margin.
+     *
+     * However, since the size of the margin differs in different screen sizes, we need to do this multiple times
+     * using media queries.
+     * 
+     * The width of the content area is defined by @contentColumns in variables.less.
+     *
+     */
     #content-wrapper {
         margin-left: 0;
         width: (@gridColumnWidth768 * @contentColumns) + (@gridGutterWidth768 * (@contentColumns - 1)) + @gridGutterWidth768;
+    }
+
+    .navbar .auth {
+        margin-right: @gridGutterWidth768;
+    }
+
+    #content {
+        header {
+            padding-left: @gridGutterWidth768;
+
+            .pull-right {
+                margin-right: @gridGutterWidth768;
+            }
+        }
+
+        .sub-header {
+            padding-left: @gridGutterWidth768;
+        }
+
+        section {
+            .row-fluid {
+                padding-left: @gridGutterWidth768;
+                padding-right: @gridGutterWidth768;
+            }
+        }
+    }
+
+    .full-section {
+        td:first-child, th:first-child {
+            padding-left: @gridGutterWidth1200;
+        }
+
+        td:last-child, th:last-child {
+            padding-right: @gridGutterWidth1200;
+        }
     }
 }
 
@@ -346,6 +396,7 @@ body > .container {
         margin-left: 0;
         width: (@gridColumnWidth * @contentColumns) + (@gridGutterWidth * (@contentColumns - 1)) + @gridGutterWidth;
     }
+
 }
 
 // Large display
@@ -354,14 +405,51 @@ body > .container {
         margin-left: 0;
         width: (@gridColumnWidth1200 * @contentColumns) + (@gridGutterWidth1200 * (@contentColumns - 1)) + @gridGutterWidth1200;
     }
+
+    .navbar .auth {
+        margin-right: @gridGutterWidth1200;
+    }
+
+    #content {
+        header {
+            padding-left: @gridGutterWidth1200;
+
+            .pull-right {
+                margin-right: @gridGutterWidth1200;
+            }
+        }
+
+        .sub-header {
+            padding-left: @gridGutterWidth1200;
+        }
+
+        section {
+            .row-fluid {
+                padding-left: @gridGutterWidth1200;
+                padding-right: @gridGutterWidth1200;
+            }
+        }
+    }
+
+    .full-section {
+        td:first-child, th:first-child {
+            padding-left: @gridGutterWidth1200;
+        }
+
+        td:last-child, th:last-child {
+            padding-right: @gridGutterWidth1200;
+        }
+    }
 }
 
 
 /*
  * Forms
+ *
+ * TODO: append/prepend
+ *
  */
 
-// TODO: prepend/append, selects
 /*
  * Provide a nice outline for all <input type="text">, with different
  * colors depending on the state of the input (error, warning, success).
@@ -477,7 +565,6 @@ body > .container {
         background-position: 0 0;
 
         // Decrease the contrast of the top border's color
-        // TODO: IE?
         border-top-color: rgba(0,0,0,.0);
 
         // Create an orange outline

@@ -7505,33 +7505,34 @@ a.badge:hover {
 body {
   background: url('images/bg.png') repeat #edf0f2;
 }
-.navbar-static-top .brand {
+.navbar .brand {
   font-family: "League Gothic", "Museo Slab", "Helvetica Neue", Helvetica, arial, sans-serif;
   font-size: 37px;
   margin-left: 15px;
-  text-shadow: 0 1px 1px black;
+  text-shadow: 0 1px 1px #000000;
 }
-.navbar-static-top .tagline {
+.navbar .tagline {
+  float: left;
   line-height: 61px;
   color: #999999;
   font-weight: italic;
   font-size: 11px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
 }
-.navbar-static-top .auth {
+.navbar .auth {
   line-height: 18px;
   color: #999999;
   margin-right: 20px;
   position: relative;
   top: 10px;
 }
-.navbar-static-top .auth img {
+.navbar .auth img.avatar {
   position: relative;
   top: -2px;
   border: 3px solid #2c3234;
   float: left;
 }
-.navbar-static-top .auth span.name {
+.navbar .auth span.name {
   margin-left: 10px;
   position: relative;
   top: 3px;
@@ -7539,17 +7540,22 @@ body {
   color: #ffffff;
   font-size: 11px;
   text-transform: uppercase;
-  text-shadow: 0 1px 1px black;
+  text-shadow: 0 1px 1px #000000;
 }
-.navbar-static-top .auth span.links {
+.navbar .auth span.links {
   margin-left: 10px;
 }
-.navbar-static-top .auth span.links a {
+.navbar .auth span.links a {
   color: #f9601c;
   font-size: 11px;
 }
-.navbar-static-top .auth span.links a + a {
+.navbar .auth span.links a + a {
   margin-left: 3px;
+}
+.navbar .nav-collapse.collapse.in .auth {
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 30px;
 }
 body > .container {
   background: url('images/sidebar_bg.png') repeat #353c3e;
@@ -7621,14 +7627,16 @@ body > .container {
  * Content - the main content area with white background
  */
 #content {
+  border: 1px solid #b8c1c7;
   border-left: 1px solid #2d3134;
   background-color: #ffffff;
   -webkit-border-radius: 0 5px 5px 0;
   -moz-border-radius: 0 5px 5px 0;
   border-radius: 0 5px 5px 0;
-  border-top: 1px solid #b8c1c7;
-  border-right: 1px solid #b8c1c7;
-  border-bottom: 1px solid #b8c1c7;
+  /*
+     * The main header of each page, in the example page this is called 'Dashboard'
+     */
+
 }
 #content .kpi {
   font-size: 23.400000000000002px;
@@ -7712,10 +7720,7 @@ body > .container {
   line-height: 26px;
 }
 #content section .row-fluid {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 15px;
-  padding-bottom: 10px;
+  padding: 12px 20px 10px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -7727,7 +7732,11 @@ body > .container {
  * Tables
  */
 .table-striped tbody tr:nth-child(odd) td {
-  background-color: #f3f8fb;
+  background-color: #edf0f2;
+}
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: #e7f1f7;
 }
 .table tbody td {
   color: #777a7c;
@@ -7737,7 +7746,7 @@ body > .container {
   color: #333333;
 }
 .table tbody td .progress-mini {
-  width: 80px;
+  max-width: 80px;
 }
 .full-section {
   margin-bottom: 0;
@@ -7750,30 +7759,58 @@ body > .container {
 .full-section th:last-child {
   padding-right: 20px;
 }
-.table-hover tbody tr:hover td,
-.table-hover tbody tr:hover th {
-  background-color: #e7f1f7;
-}
 /*
  * Responsiveness
- */
-/* 
  *
- * Some positioning tweaks for the content area
+ * When adding margins and paddings throughout the theme, Bootstrap provides us with nice
+ * variables to get the width of the grid gutters. However, these variables are static and 
+ * does not take into account the current screen size, which might alter the width of the gutters.
  *
- * We want to remove the margin-left of the content area, to position it just next to the sidebar.
- * If we do that, the width of the element is modified and thus we readd the width of the removed margin.
- *
- * However, since the size of the margin differs in different screen sizes, we need to do this multiple times
- * using media queries.
- * 
- * The width of the content area is defined by @contentColumns in variables.less.
+ * Therefore, we use @gridGutterWidth as a basic value and then, below, we override each attribute 
+ * that uses this variable.
  *
  */
 @media (min-width: 768px) and (max-width: 979px) {
+  /* 
+       *
+       * Some positioning tweaks for the content area
+       *
+       * We want to remove the margin-left of the content area, to position it just next to the sidebar.
+       * If we do that, the width of the element is modified and thus we readd the width of the removed margin.
+       *
+       * However, since the size of the margin differs in different screen sizes, we need to do this multiple times
+       * using media queries.
+       * 
+       * The width of the content area is defined by @contentColumns in variables.less.
+       *
+       */
   #content-wrapper {
     margin-left: 0;
     width: 558px;
+  }
+  .navbar .auth {
+    margin-right: 20px;
+  }
+  #content header {
+    padding-left: 20px;
+  }
+  #content header .pull-right {
+    margin-right: 20px;
+  }
+  #content .sub-header {
+    padding-left: 20px;
+  }
+  #content section .row-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .full-section td:first-child,
+  .full-section th:first-child {
+    padding-left: 30px;
+  }
+  .full-section td:last-child,
+  .full-section th:last-child {
+    padding-right: 30px;
   }
 }
 @media (min-width: 980px) and (max-width: 1199px) {
@@ -7787,9 +7824,36 @@ body > .container {
     margin-left: 0;
     width: 900px;
   }
+  .navbar .auth {
+    margin-right: 30px;
+  }
+  #content header {
+    padding-left: 30px;
+  }
+  #content header .pull-right {
+    margin-right: 30px;
+  }
+  #content .sub-header {
+    padding-left: 30px;
+  }
+  #content section .row-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .full-section td:first-child,
+  .full-section th:first-child {
+    padding-left: 30px;
+  }
+  .full-section td:last-child,
+  .full-section th:last-child {
+    padding-right: 30px;
+  }
 }
 /*
  * Forms
+ *
+ * TODO: append/prepend
+ *
  */
 /*
  * Provide a nice outline for all <input type="text">, with different
