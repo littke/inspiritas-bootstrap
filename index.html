@@ -248,9 +248,9 @@
                   </div>
                 </section>
 
-                <!-- Activity
+                <!-- Tables
                 ================================================== -->
-                <section id="buttons">
+                <section id="tables">
                   <div class="sub-header">
                     <h2>Activity</h2>
                   </div>
@@ -408,55 +408,64 @@
                     <div class="span12">
                       <table class="table">
                         <thead>
-                          <tr>
-                            <th>Normal</th>
-                            <th>Large </th>
-                            <th>Small</th>
-                            <th>Disabled</th>
-                            <th>With Icon</th>
-                            <th class="hidden-tablet">Split</th>
-                          </tr>
+                            <td>Type</td>
+                            <td>Default</td>
+                            <td>Primary</td>
                         </thead>
                         <tbody>
                           <tr>
-                            <td><a class="btn" href="#">Default</a></td>
-                            <td><a class="btn btn-large" href="#">Default</a></td>
-                            <td><a class="btn btn-small" href="#">Default</a></td>
-                            <td><a class="btn disabled" href="#">Default</a></td>
-                            <td><a class="btn" href="#"><i class="icon-cog"></i> Default</a></td>
-                            <td class="hidden-tablet">
+                            <td class="primary">Small</td>
+                            <td><a class="btn btn-small">Click me</a></td>
+                            <td><a class="btn btn-primary btn-small">Click me</a></td>
+                          </tr>
+                          <tr>
+                          <tr>
+                            <td class="primary">Normal</td>
+                            <td><a class="btn">Click me</a></td>
+                            <td><a class="btn btn-primary">Click me</a></td>
+                          </tr>
+                            <td class="primary">Disabled</td>
+                            <td><a class="btn disabled">Click me</a></td>
+                            <td><a class="btn btn-primary disabled">Click me</a></td>
+                          </tr>
+                          <tr>
+                            <td class="primary">With icon</td>
+                            <td><a class="btn"><i class="icon-cog"></i> Click me</a></td>
+                            <td><a class="btn btn-primary"><i class="icon-shopping-cart icon-white"></i> Click me</a></td>
+                          </tr>
+                          <tr>
+                            <td class="primary">Split</td>
+                            <td>
                                 <div class="btn-group">
-                                  <a class="btn" href="#">Default</a>
-                                  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                                  <a class="btn">Click me</a>
+                                  <a class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                                   <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
+                                    <li><a>Action</a></li>
+                                    <li><a>Another action</a></li>
+                                    <li><a>Something else here</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
+                                    <li><a>Separated link</a></li>
+                                  </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                  <a class="btn btn-primary">Click me</a>
+                                  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                                  <ul class="dropdown-menu">
+                                    <li><a>Action</a></li>
+                                    <li><a>Another action</a></li>
+                                    <li><a>Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a>Separated link</a></li>
                                   </ul>
                                 </div><!-- /btn-group -->
                             </td>
                           </tr>
                           <tr>
-                            <td><a class="btn btn-primary" href="#">Primary</a></td>
-                            <td><a class="btn btn-primary btn-large" href="#">Primary</a></td>
-                            <td><a class="btn btn-primary btn-small" href="#">Primary</a></td>
-                            <td><a class="btn btn-primary disabled" href="#">Primary</a></td>
-                            <td><a class="btn btn-primary" href="#"><i class="icon-shopping-cart icon-white"></i> Primary</a></td>
-                            <td class="hidden-tablet">
-                                <div class="btn-group">
-                                  <a class="btn btn-primary" href="#">Primary</a>
-                                  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                                  <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                  </ul>
-                                </div><!-- /btn-group -->
-                            </td>
+                            <td class="primary">Large</td>
+                            <td><a class="btn btn-large">Click me</a></td>
+                            <td><a class="btn btn-primary btn-large">Click me</a></td>
                           </tr>
                         </tbody>
                       </table>
@@ -474,58 +483,6 @@
                 </div>
                 <div class="row-fluid">
                     <div class="span12">
-
-                    <h3 id="breadcrumbs">Breadcrumbs</h3>
-                    <ul class="breadcrumb">
-                      <li class="active">Home</li>
-                    </ul>
-                    <ul class="breadcrumb">
-                      <li><a href="#">Home</a> <span class="divider">/</span></li>
-                      <li class="active">Library</li>
-                    </ul>
-                    <ul class="breadcrumb">
-                      <li><a href="#">Home</a> <span class="divider">/</span></li>
-                      <li><a href="#">Library</a> <span class="divider">/</span></li>
-                      <li class="active">Data</li>
-                    </ul>
-
-                    <h3 id="pagination">Pagination</h3>
-                    <div class="pagination">
-                      <ul>
-                        <li class="disabled"><a href="#">&laquo;</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">&raquo;</a></li>
-                      </ul>
-                    </div>
-                    <div class="pagination">
-                      <ul>
-                        <li><a href="#">&larr;</a></li>
-                        <li class="active"><a href="#">10</a></li>
-                        <li class="disabled"><a href="#">...</a></li>
-                        <li><a href="#">20</a></li>
-                        <li><a href="#">&rarr;</a></li>
-                      </ul>
-                    </div>
-
-                    <!-- Labels
-                    ================================================== -->
-                    <div class="row-fluid">
-                      <div class="span9">
-
-                        <h3 id="labels">Labels</h3>
-
-
-                        <span class="label">Default</span>
-                        <span class="label label-success">Success</span>
-                        <span class="label label-warning">Warning</span>
-                        <span class="label label-important">Important</span>
-                        <span class="label label-info">Info</span>
-
-                      </div>
-                    </div>
 
                     <!-- Progress bars
                     ================================================== -->
@@ -655,7 +612,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="js/highcharts.js"></script>
     <script src="js/inspiritas.js"></script>
-    <script src="bootstrap/js/bootstrap-affix.js"></script>
+    <script src="bootstrap/js/bootstrap-dropdown.js"></script>
 
 
   </body>
