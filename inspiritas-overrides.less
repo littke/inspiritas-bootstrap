@@ -191,6 +191,7 @@ body > .container {
     .border-radius(0 @baseBorderRadius @baseBorderRadius 0);
     border-top: 1px solid #b8c1c7;
     border-right: 1px solid #b8c1c7;
+    border-bottom: 1px solid #b8c1c7;
 
     header {
         .gradientBar(@pageHeaderBackground, @pageHeaderBackgroundHighlight);
@@ -283,6 +284,10 @@ body > .container {
             &.primary {
                 color: @textColor;
             }
+
+            .progress-mini {
+                width: 80px;
+            }
         }
     }
 }
@@ -290,8 +295,12 @@ body > .container {
 .full-section {
     margin-bottom: 0;
 
-    td, th {
+    td:first-child, th:first-child {
         padding-left: @gridGutterWidth; // TODO: responsive
+    }
+
+    td:last-child, th:last-child {
+        padding-right: @gridGutterWidth; // TODO: responsive
     }
 }
 
@@ -473,5 +482,65 @@ body > .container {
 
         // Create an orange outline
         .box-shadow(0 0 4px @orangeLighter);
+    }
+}
+
+/*
+ * Progress bars
+ *
+ * Use only the basic progress bar, don't add lots of colors to it.
+ *
+ * We've added a basic and a mini version (for use in tables).
+ *
+ */
+
+.progress {
+    // Make the background slightly darker
+    #gradient > .vertical(#cccfd1, #dfe1e4);
+
+    border-bottom: 1px solid white;
+    .border-radius(@borderRadiusHuge);
+    height: 16px;
+
+    .bar {
+        #gradient > .vertical(#f5763e, #ce4f17);
+
+        // Add a highlight
+        .box-shadow(inset 0 1px 0px #fba559);
+
+        .border-radius(@borderRadiusHuge);
+        border: 1px solid #bd6c49;
+
+        // Darken bottom border because of gradient
+        border-bottom: 1px solid #98350a;
+    }
+
+    &.progress-mini {
+        height: 12px;
+
+        margin-top: 4px;
+
+        // Allow inline usage
+        margin-bottom: 0;
+    }
+
+    &.no-margin {
+        margin-bottom: 0;
+    }
+}
+
+// Striped progress bars are supported but not looking super-nice
+.progress-striped {
+    .bar {
+        #gradient > .striped(#e1632b);
+
+        // Add a highlight
+        .box-shadow(inset 0 1px 0px #fba559);
+
+        .border-radius(@borderRadiusHuge);
+        border: 1px solid #bd6c49;
+
+        // Darken bottom border because of gradient
+        border-bottom: 1px solid #98350a;
     }
 }

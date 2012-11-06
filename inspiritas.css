@@ -7628,6 +7628,7 @@ body > .container {
   border-radius: 0 5px 5px 0;
   border-top: 1px solid #b8c1c7;
   border-right: 1px solid #b8c1c7;
+  border-bottom: 1px solid #b8c1c7;
 }
 #content .kpi {
   font-size: 23.400000000000002px;
@@ -7735,12 +7736,19 @@ body > .container {
 .table tbody td.primary {
   color: #333333;
 }
+.table tbody td .progress-mini {
+  width: 80px;
+}
 .full-section {
   margin-bottom: 0;
 }
-.full-section td,
-.full-section th {
+.full-section td:first-child,
+.full-section th:first-child {
   padding-left: 20px;
+}
+.full-section td:last-child,
+.full-section th:last-child {
+  padding-right: 20px;
 }
 .table-hover tbody tr:hover td,
 .table-hover tbody tr:hover th {
@@ -7881,6 +7889,71 @@ body > .container {
   -webkit-box-shadow: 0 0 4px #f8844b;
   -moz-box-shadow: 0 0 4px #f8844b;
   box-shadow: 0 0 4px #f8844b;
+}
+/*
+ * Progress bars
+ *
+ * Use only the basic progress bar, don't add lots of colors to it.
+ *
+ * We've added a basic and a mini version (for use in tables).
+ *
+ */
+.progress {
+  background-color: #d4d6d9;
+  background-image: -moz-linear-gradient(top, #cccfd1, #dfe1e4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#cccfd1), to(#dfe1e4));
+  background-image: -webkit-linear-gradient(top, #cccfd1, #dfe1e4);
+  background-image: -o-linear-gradient(top, #cccfd1, #dfe1e4);
+  background-image: linear-gradient(to bottom, #cccfd1, #dfe1e4);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcccfd1', endColorstr='#ffdfe1e4', GradientType=0);
+  border-bottom: 1px solid white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height: 16px;
+}
+.progress .bar {
+  background-color: #e5662e;
+  background-image: -moz-linear-gradient(top, #f5763e, #ce4f17);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5763e), to(#ce4f17));
+  background-image: -webkit-linear-gradient(top, #f5763e, #ce4f17);
+  background-image: -o-linear-gradient(top, #f5763e, #ce4f17);
+  background-image: linear-gradient(to bottom, #f5763e, #ce4f17);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5763e', endColorstr='#ffce4f17', GradientType=0);
+  -webkit-box-shadow: inset 0 1px 0px #fba559;
+  -moz-box-shadow: inset 0 1px 0px #fba559;
+  box-shadow: inset 0 1px 0px #fba559;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #bd6c49;
+  border-bottom: 1px solid #98350a;
+}
+.progress.progress-mini {
+  height: 12px;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+.progress.no-margin {
+  margin-bottom: 0;
+}
+.progress-striped .bar {
+  background-color: #e1632b;
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  -webkit-box-shadow: inset 0 1px 0px #fba559;
+  -moz-box-shadow: inset 0 1px 0px #fba559;
+  box-shadow: inset 0 1px 0px #fba559;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #bd6c49;
+  border-bottom: 1px solid #98350a;
 }
 /*
  * Custom overrides for the Inspiritas theme
