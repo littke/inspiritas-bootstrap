@@ -9,6 +9,7 @@ PSD but as an entirely coded frontend theme.
 - Easy to customize
 - Free and maintained
 - Uses overrides to make future updates to Bootstrap easy to get
+- Photoshop-file included
 - BONUS: Includes styling for Highcharts charting library
 
 Just fork it and get started.
@@ -46,3 +47,11 @@ allow you to. In the end of inspiritas-theme.less, you can add your own styles.
 
 If you keep all the original styling of both Bootstrap and Inspiritas intact, you can
 get new updates from us as well, without having to go through tons of git conflicts.
+
+## Photoshop file included
+
+We've included the original PSD file we used to build this design. Note that
+when creating the theme, some subtle changes were made and we perceive the theme to
+be the correct version in most cases, but the PSD file may still be useful for you.
+
+Also, the PSD includes some elements we've not yet coded but may in the future.
