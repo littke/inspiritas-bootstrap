@@ -477,7 +477,7 @@ body > .container {
     /*
      * Create the outline using box-shadow (see above comment)
      */
-    input[type=text], textarea {
+    input[type=text], input[type=password], textarea {
         @shadow: 0 0 0 @inputOutlineSize @inputOutlineColor, 
             inset 0 2px 3px @inputOutlineColor;
         .box-shadow(@shadow);
@@ -488,7 +488,7 @@ body > .container {
      * Override the default focus outline for the elements that are using our 
      * nicer outline.
      */
-    textarea:focus, input[type=text]:focus {
+    textarea:focus, input[type=text]:focus, input[type=password]:focus {
         .box-shadow(0 0 0 @inputOutlineSize #e3eff5);
     }
 
@@ -496,21 +496,21 @@ body > .container {
      * Color the outline differently depending on state.
      */
     &.error {
-        input[type=text], textarea {
+        input[type=text], input[type=password], textarea {
             box-shadow: 0 0 0 @inputOutlineSize @errorOutlineColor,
                 inset 0 2px 3px @errorOutlineColor;
         }
     }
 
     &.warning {
-        input[type=text], textarea {
+        input[type=text], input[type=password], textarea {
             box-shadow: 0 0 0 @inputOutlineSize @warningOutlineColor,
                 inset 0 2px 3px @warningOutlineColor;
         }
     }
 
     &.success {
-        input[type=text], textarea {
+        input[type=text], input[type=password], textarea {
             box-shadow: 0 0 0 @inputOutlineSize @successOutlineColor,
                 inset 0 2px 3px @successOutlineColor;
         }
