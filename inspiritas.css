@@ -133,7 +133,7 @@ textarea {
   clear: both;
 }
 .hide-text {
-  font: a;
+  font: 0/0 a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
@@ -5764,7 +5764,7 @@ a.badge:hover {
   clear: both;
 }
 .hide-text {
-  font: a;
+  font: 0/0 a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
@@ -7891,26 +7891,31 @@ body > .container {
   padding-left: 15px;
 }
 .control-group input[type=text],
+.control-group input[type=password],
 .control-group textarea {
   -webkit-box-shadow: 0 0 0 5px #eef0f2, inset 0 2px 3px #eef0f2;
   -moz-box-shadow: 0 0 0 5px #eef0f2, inset 0 2px 3px #eef0f2;
   box-shadow: 0 0 0 5px #eef0f2, inset 0 2px 3px #eef0f2;
 }
 .control-group textarea:focus,
-.control-group input[type=text]:focus {
+.control-group input[type=text]:focus,
+.control-group input[type=password]:focus {
   -webkit-box-shadow: 0 0 0 5px #e3eff5;
   -moz-box-shadow: 0 0 0 5px #e3eff5;
   box-shadow: 0 0 0 5px #e3eff5;
 }
 .control-group.error input[type=text],
+.control-group.error input[type=password],
 .control-group.error textarea {
   box-shadow: 0 0 0 5px #f8edee, inset 0 2px 3px #f8edee;
 }
 .control-group.warning input[type=text],
+.control-group.warning input[type=password],
 .control-group.warning textarea {
   box-shadow: 0 0 0 5px #fcf4de, inset 0 2px 3px #fcf4de;
 }
 .control-group.success input[type=text],
+.control-group.success input[type=password],
 .control-group.success textarea {
   box-shadow: 0 0 0 5px #eef6e7, inset 0 2px 3px #eef6e7;
 }
