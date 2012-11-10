@@ -31,7 +31,7 @@ for free.
 
 ## Customizations
 
-If you want to edit anything, fork or clone the repo and open variables.less.
+If you want to edit anything, fork or clone the repo and open `variables.less`.
 It contains the original Bootstrap variables along with some new ones for Inspiritas.
 
 Make whichever changes you want and then run a less compiler to create
@@ -51,7 +51,7 @@ get new updates from us as well, without having to go through tons of git confli
 ## Photoshop file included
 
 We've included the original PSD file we used to build this design. Note that
-when creating the theme, some subtle changes were made and we perceive the theme to
-be the correct version in most cases, but the PSD file may still be useful for you.
+when coding the theme some subtle changes were made and we perceive the coded theme 
+to be the correct version in most cases, but the PSD file may still be useful for you.
 
 Also, the PSD includes some elements we've not yet coded but may in the future.
