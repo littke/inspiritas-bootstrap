@@ -55,3 +55,8 @@ when coding the theme some subtle changes were made and we perceive the coded th
 to be the correct version in most cases, but the PSD file may still be useful for you.
 
 Also, the PSD includes some elements we've not yet coded but may in the future.
+
+## Highcharts charting library
+The JavaScript library for the graph is called <a href="http://www.highcharts.com/">HighchartsJS</a>. 
+When I first used it, it was free (or not so expensive). These days a license to use it for commercial 
+projects is quite expensive. It's free for non-commercial projects though. Check their site for details.
