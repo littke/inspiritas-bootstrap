@@ -1009,10 +1009,10 @@ a.label:hover,a.badge:hover{color:#ffffff;text-decoration:none;cursor:pointer;}
 @font-face{font-family:'League Gothic';src:url('fonts/league_gothic-webfont.eot');src:url('fonts/league_gothic-webfont.eot?#iefix') format('eot'),url('fonts/league_gothic-webfont.woff') format('woff'),url('fonts/league_gothic-webfont.ttf') format('truetype'),url('fonts/league_gothic-webfont.svg#webfont3XnFyBvL') format('svg');font-weight:normal;font-style:normal;}@font-face{font-family:'Museo Slab';src:url('fonts/museo_slab_500-webfont.eot');src:url('fonts/museo_slab_500-webfont.eot?#iefix') format('embedded-opentype'),url('fonts/museo_slab_500-webfont.woff') format('woff'),url('fonts/museo_slab_500-webfont.ttf') format('truetype'),url('fonts/museo_slab_500-webfont.svg#MuseoSlab500') format('svg');font-weight:normal;font-style:normal;}body{background:url('images/bg.png') repeat #f7fafc;}
 .navbar .brand{font-family:"League Gothic","Museo Slab","Helvetica Neue",Helvetica,arial,sans-serif;font-size:37px;margin-left:15px;text-shadow:0 1px 1px #000000;}
 .navbar .tagline{float:left;line-height:61px;color:#999999;font-weight:italic;font-size:11px;text-shadow:0 1px 1px rgba(0, 0, 0, 0.45);}
+.navbar a{color:#f9601c;font-size:11px;}
 .navbar .auth{line-height:18px;min-width:150px;color:#999999;margin-right:20px;position:relative;top:10px;}.navbar .auth img.avatar{position:relative;top:-2px;border:3px solid #2c3234;float:left;}
 .navbar .auth span.name{margin-left:10px;position:relative;top:3px;font-weight:bold;color:#ffffff;font-size:11px;text-transform:uppercase;text-shadow:0 1px 1px #000000;}
-.navbar .auth span.links{margin-left:10px;}.navbar .auth span.links a{color:#f9601c;font-size:11px;}
-.navbar .auth span.links a+a{margin-left:3px;}
+.navbar .auth span.links{margin-left:10px;}.navbar .auth span.links a+a{margin-left:3px;}
 .navbar .nav-collapse.collapse.in .auth{float:left;margin-left:20px;margin-bottom:30px;}
 body>.container{background:url('images/sidebar_bg.png') repeat #353c3e;-webkit-border-radius:7px;-moz-border-radius:7px;border-radius:7px;margin-top:40px;margin-bottom:40px;}
 .container aside{-webkit-border-radius:5px 0 0 0;-moz-border-radius:5px 0 0 0;border-radius:5px 0 0 0;}.container aside nav{margin-top:20px;border-top:1px solid #1c1f20;}.container aside nav ul li{font-size:16.25px;background:#20282B;border-top:1px solid rgba(255, 255, 255, 0.05);border-bottom:1px solid rgba(0, 0, 0, 0.75);border-right:1px solid rgba(0, 0, 0, 0.75);border-left:1px solid rgba(0, 0, 0, 0.75);float:none;}.container aside nav ul li i{margin-right:5px;}
