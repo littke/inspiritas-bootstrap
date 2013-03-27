@@ -16,9 +16,9 @@ Just fork it and get started.
 
 ## Origins
 
-Jonatan Littke debuted on <a href="http://www.dribbble.com">Dribbble</a> with his 'Campaign UI'
+Jonatan Littke debuted on Dribbble with his <a href="http://dribbble.com/shots/156005-Campaign-UI?list=users">Campaign UI</a>
 and made it to the front page on the first day. Many have requested this
-design as a PSD and today it's released by <a href="http://www.ripplehq.com">Ripple</a>
+design as a PSD and now it's released by <a href="http://www.ripplehq.com">Ripple</a>
 for free. 
 
 ## How to use
@@ -43,7 +43,7 @@ All styling by Inspiritas extends or overrides the original Bootstrap styling. T
 it easy to get new patches from Bootstrap into the theme.
 
 We recommend you use the same method if you want to change more than what the variables 
-allow you to. In the end of inspiritas-theme.less, you can add your own styles. 
+allow you to. In the end of `inspiritas-theme.less`, you can add your own styles. 
 
 If you keep all the original styling of both Bootstrap and Inspiritas intact, you can
 get new updates from us as well, without having to go through tons of git conflicts.
@@ -58,5 +58,4 @@ Also, the PSD includes some elements we've not yet coded but may in the future.
 
 ## Highcharts charting library
 The JavaScript library for the graph is called <a href="http://www.highcharts.com/">HighchartsJS</a>. 
-When I first used it, it was free (or not so expensive). These days a license to use it for commercial 
-projects is quite expensive. It's free for non-commercial projects though. Check their site for details.
+It's free for non-commerical projects but quite costly for commerical use.
